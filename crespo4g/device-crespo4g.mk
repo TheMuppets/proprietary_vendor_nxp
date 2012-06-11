@@ -12,13 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# NXP blob necessary for crespo4g, and related open-source packages
-PRODUCT_COPY_FILES := \
-    device/sample/nxp/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
-    vendor/nxp/crespo4g/proprietary/libpn544_fw.so:system/lib/libpn544_fw.so
+LOCAL_PATH := vendor/nxp/crespo4g
 
-PRODUCT_PACKAGES += \
-        libnfc \
-        libnfc_jni \
-        Nfc \
-        Tag
+# NXP blob necessary for Nexus S hardware
+PRODUCT_COPY_FILES := \
+    $(LOCAL_PATH)/proprietary/libpn544_fw.so:system/vendor/firmware/libpn544_fw.so
